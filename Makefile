@@ -5,8 +5,12 @@ FILE=liturgy
 Arrangements=$(ROOT_DIR)Hymns
 Templates=$(Arrangements)/Templates
 
+# Don't delete secondary files
+# Otherwise, a second run of lilypond-book would fail
+# (e.g., make; rm liturgy.pdf; make)
+.SECONDARY:
+
 #TODO: use scheme to check if Latin characters should be used for hymns
-#TODO: I believe many of these PDFs are unneeded.
 
 $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/First_Antiphon.pdf \
@@ -32,7 +36,6 @@ $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/V_Nedelu_Vani.pdf \
 	${Arrangements}/Da_Molchit.pdf \
 	${Arrangements}/Voskreseniye_Tvoye.pdf \
-	${Arrangements}/Zadostoinik_Pentecost.pdf \
 	${Arrangements}/Pentecostal_Week.pdf \
 	${Arrangements}/Zadostoinik_Pentecost.pdf \
 	${Arrangements}/Ascension_hymn.pdf \
@@ -40,7 +43,6 @@ $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/Memorial.pdf \
 	${Arrangements}/Memorial_Kondak.pdf \
 	${Arrangements}/Flesh_Asleep.pdf \
-	${Arrangements}/Great_Litany.pdf \
 	${Arrangements}/Under_Thy_Grace.pdf \
 	${Arrangements}/Chashu.pdf \
 	${Arrangements}/Raduytesya_Pravednii.pdf \
@@ -53,7 +55,6 @@ $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/Theotokos_Kondak.pdf \
 	${Arrangements}/blazheni.pdf \
 	${Arrangements}/Paschal_Tropar_Short.pdf \
-	${Arrangements}/Paschal_Tropar_Long.pdf \
 	${Arrangements}/Alliluia.sub.ly \
 	${Arrangements}/I_duhovi_tvojemu.sub.ly \
 	${Arrangements}/Slava_Tebje_Gospodi.sub.ly \
@@ -71,42 +72,43 @@ $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/We_have_seen_the_True_Light.sub.ly \
 	${Arrangements}/Blessed_is_the_Name.sub.ly \
 	${Arrangements}/Paschal_Tropar_Long.sub.ly \
+	#${Arrangements}/Zadostoinik_Pentecost.pdf \
+	#${Arrangements}/Great_Litany.pdf \
+	#${Arrangements}/Paschal_Tropar_Long.pdf \
 
 	lilypond-book -f latex --output OUT ${FILE}.sub.tex
 	cd OUT/; pdflatex ${FILE}.sub.tex; pdflatex ${FILE}.sub.tex; pdflatex ${FILE}.sub.tex
-	cp OUT/${FILE}.sub.pdf ./${FILE}.pdf
+	cp OUT/${FILE}.sub.pdf $@
 	pdflatex booklet.tex
 
-$(Arrangements)/%.pdf: $(Arrangements)/%.sub.ly \
-	$(Templates)/satb.sub.ily \
-	$(Templates)/satb_notime.sub.ily \
-	$(Templates)/satb_notime_trebletenor.sub.ily \
-	$(Templates)/satb_trebletenor.sub.ily 
-	cd $(Arrangements) && lilypond $<
+$(Arrangements)/%.pdf: ${Arrangements}/%.sub.ly 
+	cd $(Arrangements) && lilypond --output=$(Arrangements)/$* $<
 
 %.sub.tex: %.tex
-	sed 's,HYMNS_DIRECTORY,$(Arrangements),' $< > $*.sub.tex
+	sed 's,HYMNS_DIRECTORY,$(Arrangements),' $< > $@
 
-$(Arrangements)/%.sub.ly: $(Arrangements)/%.ly
-	sed 's,TEMPLATES_DIRECTORY,$(Templates),' $< > $(Arrangements)/$*.sub.ly
+$(Arrangements)/%.sub.ly: $(Arrangements)/%.ly \
+	${Templates}/satb.sub.ily \
+	${Templates}/satb_notime.sub.ily \
+	${Templates}/satb_notime_trebletenor.sub.ily \
+	${Templates}/satb_trebletenor.sub.ily 
+	sed 's,TEMPLATES_DIRECTORY,$(Templates),' $< > $@
 
 $(Templates)/%.sub.ily: $(Templates)/%.ily
-	cat $(Templates)/$*.ily $(Templates)/paper.ily > $(Templates)/$*.sub.ily
+	cat $(Templates)/$*.ily $(Templates)/paper.ily > $@
 
 .PHONY: clean
 clean:
 	rm -f *.aux
 	rm -f *.log
 	rm -rf OUT
-	#TODO: fix sub commands
-	rm -f *.sub
-	rm -f $(Templates)/*.sub.ily
-	rm -f $(Arrangements)/*.sub.ly
+	rm -f *.sub.tex
+	rm -rf $(Arrangements)/*.sub.ly
+	rm -rf $(Templates)/*.sub.ily
 
 .PHONY: erase
 erase: clean
 	rm -f *.pdf
-	rm -f *.sub.tex
 	rm -f $(Arrangements)/*.midi
 	rm -f $(Arrangements)/*.pdf
 
