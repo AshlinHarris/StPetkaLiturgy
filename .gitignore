@@ -1,0 +1,7 @@
+OUT/
+
+*.aux
+*.log
+*.midi
+*.pdf
+*.sub.*
