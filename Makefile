@@ -71,7 +71,8 @@ $(FILE).pdf: ${FILE}.sub.tex booklet.sub.tex \
 	${Arrangements}/Blagosloven.sub.ly \
 	${Arrangements}/We_have_seen_the_True_Light.sub.ly \
 	${Arrangements}/Blessed_is_the_Name.sub.ly \
-	${Arrangements}/Paschal_Tropar_Long.sub.ly \
+	${Arrangements}/Paschal_Tropar_Long.pdf \
+	${Arrangements}/Paschal_Troparion.pdf \
 	#${Arrangements}/Zadostoinik_Pentecost.pdf \
 	#${Arrangements}/Great_Litany.pdf \
 	#${Arrangements}/Paschal_Tropar_Long.pdf \
