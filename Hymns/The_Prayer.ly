@@ -30,9 +30,9 @@ Cyrillic = \lyricmode {
 	%Ибо Твое есть Царство и сила и слава во веки. Аминь.
 
 %NOTE: Latin lyrics may be disabled, so the English verse is included here.
-	Our Fa -- ther, who art in the hea -- vens,
+	Our Fa -- ther, who art in hea -- ven,
 	hal -- low'd be Thy name, Thy king -- dom come,
-	Thy will be done on earth as it is in the hea -- vens.
+	Thy will be done on earth as it is in hea -- ven.
 	Give us this day our dai -- ly bread.
 	And for -- give us our tres -- pas -- ses,
 	as we for -- give those who tres -- pass a -- gainst us.
@@ -65,9 +65,9 @@ sopMusic = \relative {
 	\time 15/4 bes4 bes bes bes bes bes bes bes2 (a4) g a1 \bar "||"
 
 	\time 7/4 a4 a2 a1 \bar "|"
-	\time 12/4 a4 a a a a2 (g4 f) g1 \bar "|"
+	\time 11/4 a4 a a a2 (g4 f) g1 \bar "|"
 	\time 14/4 g4 g g g g g a2. g4 f1 \bar "|"
-	\time 19/4 f4 f f f f f f f f f f f2 (g4 a) bes1 \bar "|"
+	\time 18/4 f4 f f f f f f f f f f2 (g4 a) bes1 \bar "|"
 	\time 13/4 bes4 bes bes bes bes bes2 (a4) g a1 \bar "|"
 	\time 14/4 a4 a a a a a a2 (g4 f) g1 \bar "|"
 	\time 16/4 g4 g g g g g g g g a2 (g4) f1 \bar "|"
@@ -87,9 +87,9 @@ altoMusic = \relative {
 	g4 g g g g g g g2 (f4) e f1
 
 	f4 f2 f1
-	f4 f f f f2 (e4 d) e1
+	f4 f f f2 (e4 d) e1
 	e4 e e e e e f2. e4 d1
-	d4 d d d d d d d d d d d2 (e4 f) g1
+	d4 d d d d d d d d d d2 (e4 f) g1
 	g4 g g g g g2 (f4) e f1
 	f4 f f f f f f2 (e4 d) e1
 	e4 e e e e e e e e f2 (e4) d1
@@ -109,9 +109,9 @@ tenorMusic = \relative {
 	d4 d d d d d d d2 (c4) bes a1
 
 	c4 c2 c1
-	c4 c c c c2. a4 c1
+	c4 c c c2. a4 c1
 	c4 c c c c c c2. c4 a1
-	a4 a a a a a a a a a a a2 c2 d1
+	a4 a a a a a a a a a a2 c2 d1
 	d4 d d d d d2 (c4) c c1
 	c4 c c c c c c2. (a4) c1
 	c4 c c c c c c c c c2. a1
@@ -121,9 +121,9 @@ tenorMusic = \relative {
 
 bassMusic = \relative {
 	f2._\markup{Our Father,} f4 f1
-	f4_\markup{Who art in the heavens,} f f f f c d c1
+	f4_\markup{Who art in heaven} f f f f c d c1
 	c4_\markup{hallowed be Thy name.} c c c c c c c c_\markup{Thy kingdom come.} c c c f2. f4 f c d1
-	d4_\markup{Thy will be done on earth as it is in the heavens.} d d d d d d d d d d d c2. c4 c a g1
+	d4_\markup{Thy will be done on earth as it is in heaven.} d d d d d d d d d d d c2. c4 c a g1
 	g'4_\markup{Give us this day our daily bread.} g g g g g2 (c,4) c f1
 	f4_\markup{And forgive us our trespasses,} f f f f f f f2 (c4 d) c1
 	c4_\markup{as we forgive those who trespass against us.} c c c c c c c c c c c f2 (c4) d1
@@ -131,9 +131,9 @@ bassMusic = \relative {
 	g'4_\markup{but deliver us from the evil one.} g g g g g g g2 (c,4) c f1
 
 	f4 f2 f1
-	f4 f f f f2 (e4 d) c1
+	f4 f f f2 (e4 d) c1
 	c4 c c c c c f2. c4 d1
-	d4 d d d d d d d d d d d2 c4 a g1
+	d4 d d d d d d d d d d2 c4 a g1
 	g'4 g g g g g2 (c,4) c f1
 	f4 f f f f f f2 (e4 d) c1
 	c4 c c c c c c c c f2 (c4) d1
