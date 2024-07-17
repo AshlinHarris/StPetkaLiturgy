@@ -23,7 +23,7 @@ Cyrillic = \lyricmode {
 }
 
 Latin = \lyricmode {
-	Pri -- i -- di -- tje po -- klo -- nim -- sja i pri -- pa -- djem ko Hri -- stu spa -- si ni Sy -- nje Bo -- žij
+	Pri -- i -- di -- tje po -- kla -- nim -- sja i pri -- pa -- djem ko Hri -- stu spa -- si ni Sy -- nje Bo -- žij
 	vos -- krje -- syj iz mjert -- vyh
 	vo svja -- tyh di -- vjen syj
 	mo -- li -- tva -- mi Bo -- go -- ro -- di -- cy
