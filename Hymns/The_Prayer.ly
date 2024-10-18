@@ -30,7 +30,7 @@ Cyrillic = \lyricmode {
 	%Ибо Твое есть Царство и сила и слава во веки. Аминь.
 
 %NOTE: Latin lyrics may be disabled, so the English verse is included here.
-	Our Fa -- ther, who art in hea -- ven,
+	Our Fa -- ther, who art in the hea -- vens,
 	hal -- low'd be Thy name, Thy king -- dom come,
 	Thy will be done on earth as it is in hea -- ven.
 	Give us this day our dai -- ly bread.
@@ -121,7 +121,7 @@ tenorMusic = \relative {
 
 bassMusic = \relative {
 	f2._\markup{Our Father,} f4 f1
-	f4_\markup{Who art in heaven} f f f f c d c1
+	f4_\markup{Who art in the heavens} f f f f c d c1
 	c4_\markup{hallowed be Thy name.} c c c c c c c c_\markup{Thy kingdom come.} c c c f2. f4 f c d1
 	d4_\markup{Thy will be done on earth as it is in heaven.} d d d d d d d d d d d c2. c4 c a g1
 	g'4_\markup{Give us this day our daily bread.} g g g g g2 (c,4) c f1
