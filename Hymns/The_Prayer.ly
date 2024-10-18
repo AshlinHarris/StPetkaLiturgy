@@ -65,7 +65,7 @@ sopMusic = \relative {
 	\time 15/4 bes4 bes bes bes bes bes bes bes2 (a4) g a1 \bar "||"
 
 	\time 7/4 a4 a2 a1 \bar "|"
-	\time 11/4 a4 a a a2 (g4 f) g1 \bar "|"
+	\time 12/4 a4 a a a a2 (g4 f) g1 \bar "|"
 	\time 14/4 g4 g g g g g a2. g4 f1 \bar "|"
 	\time 18/4 f4 f f f f f f f f f f2 (g4 a) bes1 \bar "|"
 	\time 13/4 bes4 bes bes bes bes bes2 (a4) g a1 \bar "|"
@@ -87,7 +87,7 @@ altoMusic = \relative {
 	g4 g g g g g g g2 (f4) e f1
 
 	f4 f2 f1
-	f4 f f f2 (e4 d) e1
+	f4 f f f f2 (e4 d) e1
 	e4 e e e e e f2. e4 d1
 	d4 d d d d d d d d d d2 (e4 f) g1
 	g4 g g g g g2 (f4) e f1
@@ -109,7 +109,7 @@ tenorMusic = \relative {
 	d4 d d d d d d d2 (c4) bes a1
 
 	c4 c2 c1
-	c4 c c c2. a4 c1
+	c4 c c c c2. a4 c1
 	c4 c c c c c c2. c4 a1
 	a4 a a a a a a a a a a2 c2 d1
 	d4 d d d d d2 (c4) c c1
@@ -131,7 +131,7 @@ bassMusic = \relative {
 	g'4_\markup{but deliver us from the evil one.} g g g g g g g2 (c,4) c f1
 
 	f4 f2 f1
-	f4 f f f2 (e4 d) c1
+	f4 f f f f2 (e4 d) c1
 	c4 c c c c c f2. c4 d1
 	d4 d d d d d d d d d d2 c4 a g1
 	g'4 g g g g g2 (c,4) c f1
